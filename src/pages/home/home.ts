@@ -14,6 +14,11 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
       
   }
+  //MARK: - 生命周期方法
+  ionViewWillEnter() {
+    // this.navCtrl.push(DetailPage)
+  }
+
    openCamera(){
 
     	var options = {
