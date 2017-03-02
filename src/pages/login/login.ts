@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+import { NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+/*
+  Generated class for the Login page.
+*/
 import { AlertController } from 'ionic-angular';
 
 import {
@@ -21,6 +26,8 @@ export class LoginPage {
     });
   }
 
+  url = '/project/app/mobileLoginAction.do';
+  
   processForm() {
     let alert = this.alertCtrl.create({
       title: "Account Created",
@@ -36,7 +43,7 @@ export class LoginPage {
   }
   //点击登录按钮
   loginClick() {
-
+    
   }
 }
 
