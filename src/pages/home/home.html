@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button icon-only menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Hello World</ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,7 +18,7 @@
     update any existing page or create new pages.
   </p>
 
-  <button (click)="openCamera()" ion-button color="secondary">随便</button>
+  <button (click)="openCamera()" ion-button color="secondary">选取照片</button>
   <button (click)="addObserver()" ion-button color="secondary">监听原生页面通知</button>
   <button (click)="toApplePage()" ion-button color="secondary">跳转到原生页面</button>
 </ion-content>

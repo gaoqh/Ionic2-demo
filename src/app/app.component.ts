@@ -1,21 +1,45 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { LoginPage } from '../pages/login/login';
-
+import { HomePage } from '../pages/home/home';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = LoginPage;
+  @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform) {
-    platform.ready().then(() => {
+  rootPage = HomePage;
+  pages: Array<{title: string, component: any}>;
+
+  constructor(
+    public platform: Platform,
+    public menu: MenuController
+  ) {
+    this.initializeApp();
+    this.pages = [
+      { title: 'Home', component: HomePage},
+      { title: 'Login', component: LoginPage},
+      { title: 'About', component: AboutPage},
+      { title: 'Contact', component: ContactPage},
+    ]
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+  openPage(page) {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    // navigate to the new page if it is not the current page
+    this.nav.setRoot(page.component);
   }
 }

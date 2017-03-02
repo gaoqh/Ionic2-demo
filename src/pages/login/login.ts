@@ -34,5 +34,9 @@ export class BasicPage {
       alert.present()
     }
   }
+  //点击登录按钮
+  loginClick() {
+
+  }
 
 }
