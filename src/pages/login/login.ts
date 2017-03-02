@@ -18,5 +18,9 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  //点击登录按钮
+  loginClick() {
+
+  }
 
 }
