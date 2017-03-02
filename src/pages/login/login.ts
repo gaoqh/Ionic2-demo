@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { Http } from '@angular/http';
 /*
   Generated class for the Login page.
 
@@ -13,14 +13,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  url = '/project/app/mobileLoginAction.do';
+  constructor(public navCtrl: NavController, public navParams: NavParams, http: Http) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   //点击登录按钮
   loginClick() {
-
+    this.http
   }
 
 }
