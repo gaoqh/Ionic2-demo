@@ -1,22 +1,38 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Login page.
+import { AlertController } from 'ionic-angular';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import {
+  FormGroup,
+  FormControl,
+  Validators
+} from '@angular/forms';
+
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
 })
-export class LoginPage {
+export class BasicPage {
+  form;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public alertCtrl: AlertController) {
+    this.form = new FormGroup({
+      firstName: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required)
+    });
+  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  processForm() {
+    let alert = this.alertCtrl.create({
+      title: "Account Created",
+      message: "Created Account for: " + this.form.value.firstName + " " + this.form.value.lastName,
+      buttons: [{
+        text: 'Ok',
+      }]
+    });
+
+    if (this.form.status === 'VALID') {
+      alert.present()
+    }
   }
 
 }
