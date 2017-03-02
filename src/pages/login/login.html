@@ -1,6 +1,38 @@
 
 <style>
-  
+  .logo{
+    background-color:#fff;
+    position: relative;
+    left: 50%;
+    margin-left: -90px;
+    top: 30px;
+  }
+  .login{
+    background-color:#f56723;
+    margin:20px 0;
+  }
+  p{
+    width: 100%;
+    margin-top: 120px;
+    color: #999;
+  }
+  p span{
+     display: inline-block;
+     width: 80px;
+    font-family: "微软雅黑"
+  }
+  p .line{
+    width:120px;
+    height:1px;
+    background-color:#999;
+  }
+  .list-ios{
+    margin:-1px 0 32px 2px;
+    font-family: "微软雅黑"
+  }
+  .label-ios{
+    margin: 0;
+  }
 </style>
 <ion-content>
   <form (submit)="processForm()" [formGroup]="form">
@@ -23,7 +55,7 @@
 
       <div>
         <ion-list>
-          <ion-row>
+          <ion-row id="check">
            <ion-checkbox checked="true"></ion-checkbox>
             <ion-label>记住密码</ion-label>
             <ion-checkbox color="secondary" checked="true"></ion-checkbox>
