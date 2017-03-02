@@ -1,25 +1,40 @@
 
-<ion-header>
-  <ion-navbar>
-    <ion-title>Inputs</ion-title>
-  </ion-navbar>
-</ion-header>
-
+<style>
+  
+</style>
 <ion-content>
   <form (submit)="processForm()" [formGroup]="form">
+     <ion-img class="logo" width="180" height="180" src="assets/img/logoS@3x.png"></ion-img>
+
       <ion-list>
 
-      <ion-item>
-        <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-input formControlName="account" type="text" placeholder="账号"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-input formControlName="password" type="text" placeholder="密码"></ion-input>
+        </ion-item>
 
-    </ion-list>
+      </ion-list>
     <div padding>
-      <button ion-button block type="submit">Create Account</button>
+    
+      <button class="login" ion-button block type="submit">Login</button>
+
+      <div>
+        <ion-list>
+          <ion-row>
+           <ion-checkbox checked="true"></ion-checkbox>
+            <ion-label>记住密码</ion-label>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label>自动登录</ion-label>
+            <ion-label>忘记密码？</ion-label>
+          </ion-row>
+        </ion-list>
+
+        <p><span class="line"></span><span>设置服务器</span><span class="line"></span></p>
+      </div>
+
     </div>
   </form>
 </ion-content>

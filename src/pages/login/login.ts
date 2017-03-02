@@ -11,20 +11,20 @@ import {
 @Component({
   templateUrl: 'login.html',
 })
-export class BasicPage {
+export class LoginPage {
   form;
 
   constructor(public alertCtrl: AlertController) {
     this.form = new FormGroup({
-      firstName: new FormControl("", Validators.required),
-      lastName: new FormControl("", Validators.required)
+      account: new FormControl("", Validators.required),
+      password: new FormControl("", Validators.required)
     });
   }
 
   processForm() {
     let alert = this.alertCtrl.create({
       title: "Account Created",
-      message: "Created Account for: " + this.form.value.firstName + " " + this.form.value.lastName,
+      message: "Created Account for: " + this.form.value.account + " " + this.form.value.password,
       buttons: [{
         text: 'Ok',
       }]
@@ -38,5 +38,5 @@ export class BasicPage {
   loginClick() {
 
   }
-
 }
+
