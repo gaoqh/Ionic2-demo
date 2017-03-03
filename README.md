@@ -3,17 +3,21 @@
 
 > $ cd Ionic2-demo</br>
 $ npm install</br>
-$ ionic serve   
+$ ionic serve
+</br>
+
 * add platforms</br>
 
 > $ ionic platform add android</br>
 $ ionic platform add ios</br>
 </br>
+
 * build</br>
 
 > $ ionic build ios</br>
 $ ionic build android</br>
 </br>
+
 * run in ios</br>
 
 > $ ionic run ios</br>
