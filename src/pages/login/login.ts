@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 /*
@@ -25,8 +24,23 @@ export class LoginPage {
       password: new FormControl("", Validators.required)
     });
   }
+ //点击登录按钮
+  loginClick() {
+    let alert = this.alertCtrl.create({
+      title: '温馨提示!',
+      subTitle: '请填写密码!',
+      buttons: ['OK']
+    });
+    /*if(){
+     alert.present();
+    }
+    else{
+    console.log(1)
+    }*/
+    alert.present();
+  }
 
-  url = '/project/app/mobileLoginAction.do';
+  
   
   processForm() {
     let alert = this.alertCtrl.create({
@@ -41,9 +55,6 @@ export class LoginPage {
       alert.present()
     }
   }
-  //点击登录按钮
-  loginClick() {
-    
-  }
+ 
 }
 

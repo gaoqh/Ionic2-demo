@@ -1,3 +1,60 @@
-page-login {
-
+.page-login {
+.img-loaded{
+    background-color:#fff;
+    position: relative;
+    left: 50%;
+    margin-left: -90px;
+    top: 30px;
+  }
+  .login{
+    background-color:#f56723;
+    margin:20px 0;
+  }
+  p{
+    width: 100%;
+    margin-top: 120px;
+    color: #999;
+    text-align:center;
+  }
+  p span{
+     display: inline-block;
+     width: 80px;
+    font-family: "微软雅黑"
+  }
+  p .line{
+    width:80px;
+    height:1px;
+    background-color:#999;
+  }
+  .list-ios{
+    margin:-1px 0 32px 2px;
+    font-family: "微软雅黑"
+  }
+  .label-ios,.label-md{
+    margin: 0;
+  }
+  .list-ios > .item-block:first-child{
+    border-top:none;
+  }
+  .item-input ion-input{
+    height:45px;
+    line-height:45px;
+    color:#666;
+  }
+  .text-input-ios{
+    margin:0;
+  }
+  .item-ios{
+    width: 300px;
+    margin: 0 auto;
+  }
+  .list-ios > .item-block:last-child .item-inner{
+    border-bottom: 0.55px solid #c8c7cc;
+  }
+  .list-ios > .item-block:last-child{
+    border-bottom: none;
+  }
+  .label-ios{
+    color:#666;
+  }
 }
