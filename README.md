@@ -9,18 +9,18 @@ $ ionic serve
 * add platforms</br>
 
 > $ ionic platform add android</br>
-$ ionic platform add ios</br>
+$ ionic platform add ios
 </br>
 
 * build</br>
 
 > $ ionic build ios</br>
-$ ionic build android</br>
+$ ionic build android
 </br>
 
 * run in ios</br>
 
-> $ ionic run ios</br>
+> $ ionic run ios
 </br>
 
 
