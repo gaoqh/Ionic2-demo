@@ -1,4 +1,53 @@
+<<<<<<< HEAD
 <ion-content  class="page-login">
+=======
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<style>
+  .logo{
+    background-color:#fff;
+    position: relative;
+    left: 50%;
+    margin-left: -90px;
+    top: 30px;
+  }
+  .login{
+    background-color:#f56723;
+    margin:20px 0;
+  }
+  p{
+    width: 100%;
+    margin-top: 120px;
+    color: #999;
+    text-align:center;
+  }
+  p span{
+     display: inline-block;
+     width: 80px;
+    font-family: "微软雅黑"
+  }
+  p .line{
+    width:80px;
+    height:1px;
+    background-color:#999;
+  }
+  .list-ios{
+    margin:-1px 0 32px 2px;
+    font-family: "微软雅黑"
+  }
+  .label-ios,.label-md{
+    margin: 0;
+  }
+</style>
+<ion-content>
+>>>>>>> 3c2da72704f57f490f77ea00a3823f1514f18913
   <form (submit)="processForm()" [formGroup]="form">
      <ion-img class="logo" width="180" height="180" src="assets/img/logoS@3x.png"></ion-img>
       <ion-list>
