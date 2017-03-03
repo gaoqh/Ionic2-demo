@@ -31,7 +31,7 @@ export class LoginPage {
       'loginName' : '12345' , 
       'password' : '12345' , 
       'language' : 'zh' , 
-      'uid' : 12345456757876
+      'uid' : '12345456757876'
     }
     HTTP.get('http://112.125.95.20:8585/project//app/mobileLoginAction.do', data, {}).then(res => {
       console.log(res.data)
