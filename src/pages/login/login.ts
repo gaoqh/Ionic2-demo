@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http';
+// import { Http } from '@angular/http';
+import {HTTP} from 'ionic-native'
 /*
   Generated class for the Login page.
 */
@@ -43,7 +44,14 @@ export class LoginPage {
   }
   //点击登录按钮
   loginClick() {
-    
+    var data = {
+      'loginName' : '12345' , 
+      'password' : '12345' , 
+      'language' : 'zh' , 
+      'uid' : 12345456757876
+    }
+    HTTP.get('http://112.125.95.20:8585/project//app/mobileLoginAction.do', data, {}).then(res => {
+      console.log(res.data)
+    })
   }
 }
-
