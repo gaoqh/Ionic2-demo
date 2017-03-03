@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { NavController, NavParams } from 'ionic-angular';
 // import { Http } from '@angular/http';
 import {HTTP} from 'ionic-native'
@@ -26,8 +25,32 @@ export class LoginPage {
       password: new FormControl("", Validators.required)
     });
   }
+ //点击登录按钮
+  loginClick() {
+    var data = {
+      'loginName' : '12345' , 
+      'password' : '12345' , 
+      'language' : 'zh' , 
+      'uid' : 12345456757876
+    }
+    HTTP.get('http://112.125.95.20:8585/project//app/mobileLoginAction.do', data, {}).then(res => {
+      console.log(res.data)
+    })
+    let alert = this.alertCtrl.create({
+      title: '温馨提示!',
+      subTitle: '请填写密码!',
+      buttons: ['OK']
+    });
+    /*if(){
+     alert.present();
+    }
+    else{
+    console.log(1)
+    }*/
+    // alert.present();
+  }
 
-  url = '/project/app/mobileLoginAction.do';
+  
   
   processForm() {
     let alert = this.alertCtrl.create({
@@ -41,17 +64,5 @@ export class LoginPage {
     if (this.form.status === 'VALID') {
       alert.present()
     }
-  }
-  //点击登录按钮
-  loginClick() {
-    var data = {
-      'loginName' : '12345' , 
-      'password' : '12345' , 
-      'language' : 'zh' , 
-      'uid' : 12345456757876
-    }
-    HTTP.get('http://112.125.95.20:8585/project//app/mobileLoginAction.do', data, {}).then(res => {
-      console.log(res.data)
-    })
   }
 }
