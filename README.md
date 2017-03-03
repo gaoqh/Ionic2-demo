@@ -1,9 +1,9 @@
 # Ionic2-demo
 * build environment with npm and add plugins.</br>
-`$ cd Ionic2-demo</br>
-$ npm install   </br>
-$ ionic serve   </br>`
-</br>
+> $ cd Ionic2-demo
+$ npm install
+$ ionic serve   
+
 * add platforms</br>
 `$ ionic platform add android</br>
 $ ionic platform add ios</br>`
