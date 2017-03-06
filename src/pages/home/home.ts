@@ -44,3 +44,4 @@ export class HomePage {
     Broadcaster.fireNativeEvent('jsToNative',{ item:'test data' }).then(() => console.log('Success'));
   }
 }
+console.log('测试终端打印');

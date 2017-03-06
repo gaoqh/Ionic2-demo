@@ -25,6 +25,7 @@ platforms/
 platforms/ios/ios.json
 platforms/android/android.json
 hooks/
+plugins/
 www/
 $RECYCLE.BIN/
 
