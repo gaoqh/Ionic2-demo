@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 // import { Http } from '@angular/http';
-import {HTTP} from 'ionic-native'
+import { HTTP } from 'ionic-native'
 /*
   Generated class for the Login page.
 */
 import { AlertController } from 'ionic-angular';
-
+import { HomePage } from '../../pages/home/home'
 import {
   FormGroup,
   FormControl,
   Validators
 } from '@angular/forms';
-
+import { TestModel } from "../../models/user";
 @Component({
   templateUrl: 'login.html',
 })
 export class LoginPage {
   form;
 
-  constructor(public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
     this.form = new FormGroup({
       account: new FormControl("", Validators.required),
       password: new FormControl("", Validators.required)
@@ -28,26 +28,28 @@ export class LoginPage {
  //点击登录按钮
   loginClick() {
     var data = {
-      'loginName' : '12345' , 
-      'password' : '12345' , 
-      'language' : 'zh' , 
-      'uid' : '12345456757876'
+      'id' : '58b655ba99c25323cc1d4bae' , 
     }
-    HTTP.get('http://112.125.95.20:8585/project//app/mobileLoginAction.do', data, {}).then(res => {
-      console.log(res.data)
+    HTTP.post('http://10.10.10.236:8809/find-resume', data, {}).then(res => {
+      var json = res.data
+      console.log(json)
+      if (res.error == null) {
+        let alert = this.alertCtrl.create({
+        title: '登录成功！',
+      });
+      alert.present();
+      this.navCtrl.setPages([HomePage])
+      }else {
+        let alert = this.alertCtrl.create({
+        title: '登录失败！',
+      });
+      alert.present();
+      }
+      
     })
-    let alert = this.alertCtrl.create({
-      title: '温馨提示!',
-      subTitle: '请填写密码!',
-      buttons: ['OK']
-    });
-    /*if(){
-     alert.present();
-    }
-    else{
-    console.log(1)
-    }*/
-    // alert.present();
+
+
+    
   }
 
   

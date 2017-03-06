@@ -1,0 +1,10 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "/Users/gaoqinghua/Desktop/demo/demo004/node_modules/typedjson-npm/package.json",
+    "raw": "npm:typedjson-npm",
+    "main": "js/typed-json.js",
+    "version": "0.1.6",
+    "name": "typedjson-npm"
+  }
+}
