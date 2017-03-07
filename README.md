@@ -1,4 +1,4 @@
-# Ionic2-client
+# Ionic2-demo
 * install modules and plugins.
 
 > $ cd Ionic2-demo</br>
