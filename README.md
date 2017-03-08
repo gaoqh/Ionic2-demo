@@ -1,5 +1,5 @@
 # Ionic2-demo
-* build environment with npm and add plugins.
+* install modules and plugins.
 
 > $ cd Ionic2-demo</br>
 $ npm install</br>
