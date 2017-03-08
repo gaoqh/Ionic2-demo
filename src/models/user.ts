@@ -8,12 +8,8 @@ export class ResLogin{
     desc:string;
     success:boolean;
 }
-@JsonObject
-export class TestModel {
-    @JsonMember
+export interface TestModel {
     id: string;
-    @JsonMember
-    idCode: string
-    @JsonMember
-    peName: string
+    idCode: string;
+    peName: string;
 }

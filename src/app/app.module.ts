@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
 import { LoginPage } from '../pages/login/login';
+import { HttpClient } from '../utils/HttpClient';
 @NgModule({
   declarations: [
     MyApp,
@@ -15,7 +16,7 @@ import { LoginPage } from '../pages/login/login';
     HomePage,
     TabsPage,
     DetailPage,
-    LoginPage
+    LoginPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,8 +29,8 @@ import { LoginPage } from '../pages/login/login';
     HomePage,
     TabsPage,
     DetailPage,
-    LoginPage
+    LoginPage,
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, HttpClient]
 })
 export class AppModule {}

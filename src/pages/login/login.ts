@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 // import { Http } from '@angular/http';
-import { HTTP } from 'ionic-native'
+import { HttpClient } from '../../utils/HttpClient'
 /*
   Generated class for the Login page.
 */
@@ -19,7 +19,7 @@ import { TestModel } from "../../models/user";
 export class LoginPage {
   form;
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public httpDelegate: HttpClient) {
     this.form = new FormGroup({
       account: new FormControl("", Validators.required),
       password: new FormControl("", Validators.required)
@@ -30,25 +30,9 @@ export class LoginPage {
     var data = {
       'id' : '58b655ba99c25323cc1d4bae' , 
     }
-    HTTP.post('http://10.10.10.236:8809/find-resume', data, {}).then(res => {
-      var json = res.data
-      console.log(json)
-      if (res.error == null) {
-        let alert = this.alertCtrl.create({
-        title: '登录成功！',
-      });
-      alert.present();
-      this.navCtrl.setPages([HomePage])
-      }else {
-        let alert = this.alertCtrl.create({
-        title: '登录失败！',
-      });
-      alert.present();
-      }
-      
+    this.httpDelegate.getDataFromUrl('http://10.10.10.236:8809/find-resume', data, {}).then(model => {
+        console.log(model.id)
     })
-
-
     
   }
 
